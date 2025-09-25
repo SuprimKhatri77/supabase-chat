@@ -46,7 +46,7 @@ const ChatComponent = ({ users, chats, currentUser }: Props) => {
                 className="rounded-full"
               />
             </div>
-            <p>{user.email}</p>
+            {/* <p>{user.email}</p> */}
             <Button
               onClick={async () => {
                 await startChat(currentUser.id, user.id);
