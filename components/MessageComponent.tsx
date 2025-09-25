@@ -39,7 +39,8 @@ export default function Message({
   });
 
   const [messageText, setMessageText] = useState<string>("");
-  const [liveMessages, setLiveMessages] = useState(messages);
+  const [liveMessages, setLiveMessages] =
+    useState<MessageWithChatUser[]>(messages);
   const [pending, setPending] = useState<boolean>(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -90,7 +91,6 @@ export default function Message({
           console.log("🎯 New data:", payload.new);
           console.log("🎯 Old data:", payload.old);
 
-          // Now check if it's for our chat
           if (payload.new) {
             const rawData = payload.new as any;
             console.log("🎯 Raw chat_id from payload:", rawData.chat_id);
