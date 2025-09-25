@@ -13,14 +13,11 @@ import { startChat } from "@/actions/startChat";
 
 type Props = {
   users: UserSelectType[];
-  chats: (ChatSelectType & {
-    receiver: UserSelectType;
-    messages: MessageSelectType[];
-  })[];
+
   currentUser: UserSelectType;
 };
 
-const ChatComponent = ({ users, chats, currentUser }: Props) => {
+const ChatComponent = ({ users, currentUser }: Props) => {
   // console.log("users from comp: ", users);
   return (
     <div className="min-h-screen flex flex-col w-full">

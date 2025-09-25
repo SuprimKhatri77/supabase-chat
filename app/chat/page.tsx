@@ -39,25 +39,7 @@ export default async function Page() {
   });
 
   // console.log("users: ");
-  const chatsRecord: ChatWithUserMessages[] = (await db.query.chats.findMany({
-    where: (fields, { eq, or }) =>
-      or(
-        eq(chats.senderId, session.user.id),
-        eq(chats.receiverId, session.user.id)
-      ),
-    with: {
-      sender: true,
-      receiver: true,
-      messages: true,
-    },
-  })) as ChatWithUserMessages[];
 
-  console.log("rednering the component now");
-  return (
-    <ChatComponent
-      users={users ?? []}
-      currentUser={currentUser}
-      chats={chatsRecord ?? []}
-    />
-  );
+  // console.log("rednering the component now");
+  return <ChatComponent users={users ?? []} currentUser={currentUser} />;
 }

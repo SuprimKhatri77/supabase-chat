@@ -10,7 +10,7 @@ export async function middleware(request: NextRequest) {
     {
       baseURL: request.nextUrl.origin,
       headers: {
-        cookie: request.headers.get("cookie") || "", // Forward the cookies from the request
+        cookie: request.headers.get("cookie") || "",
       },
     }
   );
@@ -23,5 +23,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: [], // Apply middleware to specific routes
+  matcher: ["/chat/:path*"],
 };
