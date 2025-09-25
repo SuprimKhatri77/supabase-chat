@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1758619716997,
+      "tag": "0000_melted_mother_askani",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1758636539499,
+      "tag": "0001_famous_bushwacker",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1758637770784,
+      "tag": "0002_illegal_stark_industries",
+      "breakpoints": true
+    }
+  ]
+}
