@@ -21,7 +21,7 @@ export default async function Page({
 }) {
   const { chatId } = await params;
   if (!chatId || !isValidUUID(chatId)) {
-    return redirect("/chat"); // or show 404
+    return redirect("/chat");
   }
 
   const session = await auth.api.getSession({

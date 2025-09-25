@@ -15,20 +15,18 @@ export async function sendMessage(
   console.log("chatId: ", chatId);
 
   try {
-    // Insert the message into the database
     const [insertedMessage] = await db
       .insert(messages)
       .values({
         message,
         senderId,
         chatId,
-        createdAt: new Date(), // Ensure timestamp is set
+        createdAt: new Date(),
       })
       .returning();
 
     console.log("✅ Message inserted successfully:", insertedMessage);
 
-    // Revalidate the path to ensure fresh data on page refresh
     revalidatePath("/chat");
 
     return {
