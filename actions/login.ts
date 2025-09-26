@@ -2,6 +2,7 @@
 
 import { auth } from "@/lib/auth/auth";
 import { APIError } from "better-auth";
+import { redirect } from "next/navigation";
 import z from "zod";
 
 export type SignInFormState = {
